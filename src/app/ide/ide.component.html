@@ -1,0 +1,10 @@
+<mat-card-title>
+  <mat-toolbar-row>
+      <button mat-raised-button color="primary" (click)='onRun()'>Run</button>
+      <button mat-raised-button color="primary" (click)="onSave()" *ngIf="mode === 'edit'">Save</button>
+      <button mat-raised-button color="primary" (click)="reset()" *ngIf="mode === 'edit'">Reset</button>
+  </mat-toolbar-row>
+
+</mat-card-title>
+<div class="code-editor" #codeEditor></div>
+<app-console></app-console>

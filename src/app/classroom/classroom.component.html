@@ -1,0 +1,64 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="container" *ngIf="!isLoading">
+  <div class="flex-container" fxLayout="row" fxLayout.xs ="column" fxLayoutAlign="center" fxLayoutGap="0.5%">
+    <div fxFlex="15%">
+      <mat-card class="space-top">
+        <h3>Class Code</h3>
+        <div>
+          <p>{{ classCode }}</p>
+        </div>
+
+      </mat-card>
+    </div>
+    <div fxFlex="50%">
+        <mat-card>
+          <h1>{{ classTitle }}</h1>
+        </mat-card>
+        <mat-card class="space-top">
+          <mat-card-title>
+            <h3>Assignments</h3>
+          </mat-card-title>
+          <mat-card-actions *ngIf="isTeacher">
+            <button mat-icon-button [routerLink]="['/create']" >
+              <mat-icon>
+                note_add
+              </mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon>
+                assignment_ind
+              </mat-icon>
+            </button>
+          </mat-card-actions>
+          <mat-card-content >
+            <mat-toolbar class="lab-selector" color="primary" *ngFor="let lab of labs">
+              <span>{{ lab.labName }}</span>
+              <span class="spacer"></span>
+              <a mat-raised-button class="labButton" [routerLink]="['/lab',lab.id]">Open</a>
+              <div *ngIf="isTeacher">
+                <span>
+                  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="onDelete(lab.id)">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete</span>
+                      </button>
+                      <button mat-menu-item [routerLink]="['/edit',lab.id]">
+                        <mat-icon>edit</mat-icon>
+                        <span>Edit</span>
+                      </button>
+                      <button mat-menu-item [routerLink]="['/lab-grade-view',lab.id]">
+                        <mat-icon>info</mat-icon>
+                        <span>Info</span>
+                      </button>
+                    </mat-menu>
+                </span>
+              </div>
+            </mat-toolbar>
+          </mat-card-content>
+        </mat-card>
+    </div>
+  </div>
+</div>

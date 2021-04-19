@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+
+    <a routerLink="/">ComsiClassroom</a>
+    <ul>
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button routerLink="/signup">Signup</a>
+      </li>
+    </ul>
+
+
+  <span class="spacer"></span>
+  <ul >
+    <li *ngIf="userIsAuthenticated && classCode === 'null'">
+      <a mat-button routerLink="/classroom-options">Join-Create</a>
+    </li>
+    <li *ngIf="userIsAuthenticated && classCode !== 'null'">
+      <a mat-button routerLink="/">Classroom</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/code">Code</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/about">About</a>
+    </li>
+    <li>
+      <button mat-button (click)="onLogout()" *ngIf="userIsAuthenticated">Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>

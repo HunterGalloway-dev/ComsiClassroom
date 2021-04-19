@@ -1,0 +1,13 @@
+mat-card {
+  width: 100%;
+  height: auto;
+  margin: right;
+}
+
+button {
+  margin-right: 1rem;
+}
+
+.console {
+  height: 33%;
+}

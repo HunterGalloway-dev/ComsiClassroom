@@ -1,0 +1,15 @@
+table {
+  width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.check {
+  color: green;
+}
+
+.ex {
+  color: red;
+}

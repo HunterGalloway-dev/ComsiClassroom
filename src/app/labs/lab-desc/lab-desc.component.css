@@ -1,0 +1,14 @@
+.code-box {
+  background: lightgray;
+  color: gray;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.example-card {
+  margin: 1rem;
+}
+
+.title {
+  text-align: center;
+}
+

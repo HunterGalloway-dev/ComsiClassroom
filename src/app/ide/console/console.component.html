@@ -1,0 +1,14 @@
+
+<mat-card class="big-container">
+  <mat-tab-group class="console">
+    <mat-tab label="Output">
+      <mat-form-field class="field">
+        <textarea matInput [value]='outputText' readonly class="textBox" rows=12 ></textarea>
+      </mat-form-field>
+    </mat-tab>
+    <mat-tab label="Input">
+      <textarea matInput placeholder="Format"></textarea>
+    </mat-tab>
+    <mat-tab label="Test Cases"> Prebuilt Test Cases</mat-tab>
+  </mat-tab-group>
+</mat-card>

@@ -1,0 +1,17 @@
+mat-form-field {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+.container {
+  width: 25%;
+  margin: 1rem auto;
+}
+
+.role_select {
+  margin-top: 1rem;
+  flex: 1 1 auto;
+}

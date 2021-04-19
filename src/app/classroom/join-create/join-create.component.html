@@ -1,0 +1,43 @@
+
+<div *ngIf="isTeacher">
+  <mat-card class="class_select">
+    <mat-card-title>
+      Create a Classroom
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="classCreateForm" (submit)="onCreateClass()">
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="classTitle"
+            placeholder="Class Title"
+          >
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Create</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div *ngIf="!isTeacher">
+  <mat-card>
+    <mat-card-title>
+      Join Class
+    </mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="classJoinForm" (submit)="onJoinClass()">
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="classCode"
+            placeholder="Class Code"
+          >
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Join</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+

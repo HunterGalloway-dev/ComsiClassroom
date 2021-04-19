@@ -1,0 +1,20 @@
+textarea,mat-form-field {
+  width: 100%;
+}
+
+.editor {
+  width: 75%;
+}
+
+mat-card, .column {
+  margin-top: 1rem;
+}
+
+.container {
+  width: 45%;
+
+}
+
+button {
+  margin-top: 1rem;
+}

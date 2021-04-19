@@ -1,0 +1,74 @@
+
+
+<div class="flex-container" fxLayout="row" fxLayout.xs ="column" fxLayoutAlign="center" fxLayoutGap="0.5%">
+  <div class="column" fxFlex="45%">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <h2> Lab Editor</h2>
+        </mat-expansion-panel-header>
+        <mat-panel-description>
+          <h5>Tutorial on how to use lab app-lab</h5>
+
+          <ul>
+            <li>Tutorial on how to use lab editor</li>
+            <li>How to format examples</li>
+            <li>How to format test cases</li>
+            <li>If you see this add a loading button thanks cutie</li>
+          </ul>
+        </mat-panel-description>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <form [formGroup]="form" (submit)="onSaveLab(ide.getValue())">
+      <mat-card>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            formControlName="labTitle"
+            placeholder="Lab Title"
+          >
+        </mat-form-field>
+      </mat-card>
+      <mat-card>
+        <mat-form-field>
+          <textarea
+            matInput
+            name="labDesc"
+            formControlName="labDescription"
+            placeholder="Lab Description"
+          ></textarea>
+        </mat-form-field>
+      </mat-card>
+      <mat-card>
+        <mat-form-field>
+          <textarea
+            matInput
+            name="labExamples"
+            formControlName="labExamples"
+            placeholder="Lab Examples"
+          ></textarea>
+        </mat-form-field>
+      </mat-card>
+
+      <mat-card>
+        <mat-form-field>
+          <textarea
+            matInput
+            name="labTests"
+            formControlName="labTestCases"
+            placeholder="Expected Output"
+          ></textarea>
+        </mat-form-field>
+      </mat-card>
+      <button mat-raised-button color="primary" type="submit">Save</button>
+    </form>
+
+  </div>
+  <div class="column" fxFlex="45%">
+    <mat-card>
+      <app-ide #ide></app-ide>
+    </mat-card>
+  </div>
+</div>
